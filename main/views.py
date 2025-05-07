@@ -87,3 +87,58 @@ def financial_data_view(request):
     else:
         form = FinancialDataForm()
     return render(request, 'financial_data.html', {'form': form})
+
+
+from django.shortcuts import render, redirect
+from .forms import ContentForm
+
+def content_view(request):
+    if request.method == 'POST':
+        form = ContentForm(request.POST, request.FILES)
+        if form.is_valid():
+            ticker = form.cleaned_data.get("equity")
+            quarter = None
+            year = None
+            published_date = form.cleaned_data.get("published_date")
+            fiscal_date = published_date
+            file = form.cleaned_data['file']
+            file_path = default_storage.save(file.name, file)
+            full_file_path = os.path.join(settings.MEDIA_ROOT, file_path)
+            content_name = form.cleaned_data.get("content_name")
+            content_type = form.cleaned_data.get("content_type")
+            periodicity = "non-periodic"
+            geography = "european"
+            file_type = 'pdf'
+            file_name = file.name
+            path = construct_path(ticker, published_date, file_name)
+            r2_url = upload_to_r2(full_file_path, file_name, path, True)
+
+
+            event = construct_event(
+                equity_ticker=ticker,
+                content_name=content_name,
+                content_type=content_type,
+                published_date=str(published_date),
+                r2_url=r2_url,
+                periodicity=periodicity,
+                file_type=file_type,
+                geography=geography,
+                fiscal_date=str(fiscal_date),
+                fiscal_year=year,
+                fiscal_quarter=quarter
+            )
+
+
+            append_event_to_json(event)
+
+
+
+            # Process the form data (e.g., save to database)
+            # For now, we'll just refresh the page
+            return redirect('content')
+        else:
+            # If the form is not valid, render the form with error messages
+            return render(request, 'content_data.html', {'form': form})
+    else:
+        form = ContentForm()
+    return render(request, 'content_data.html', {'form': form})

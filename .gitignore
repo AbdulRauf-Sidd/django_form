@@ -1,2 +1,5 @@
 media/
+django_form/
+main/__pycache__/
+main/migrations/
 django_form/*
