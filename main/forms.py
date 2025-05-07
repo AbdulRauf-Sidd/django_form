@@ -15,6 +15,7 @@ class FinancialDataForm(forms.Form):
     year = forms.CharField(max_length=4, required=False, error_messages={'invalid': YEAR_ERROR_MESSAGE})
     published_date = forms.DateField(input_formats=['%Y-%m-%d'], error_messages={'invalid': DATE_ERROR_MESSAGE})
     fiscal_date = forms.DateField(input_formats=['%Y-%m-%d'], required=False, error_messages={'invalid': DATE_ERROR_MESSAGE})
+    
     file = forms.FileField(error_messages={'invalid': PDF_ERROR_MESSAGE})
 
     def clean_equity(self):
