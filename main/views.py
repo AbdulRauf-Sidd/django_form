@@ -31,16 +31,22 @@ def financial_data_view(request):
 
             # You can now use `full_file_path` for further processing
            
-            if quarter != 4 and quarter is not None:
-                content_type = "quarterly_report"
+            if quarter == '1':
+                content_type = "3M Report"
                 periodicity = "periodic"
-            elif quarter == 4:
-                content_type = "annual_report"
+            elif quarter == '2':
+                content_type = "Half Year Report"
+                periodicity = "periodic"
+            elif quarter == '3':
+                content_type = "9M Report"
+                periodicity = "periodic"
+            elif quarter == '4':
+                content_type = "Annual Report"
                 periodicity = "periodic"
             else:
                 content_type = None
                 periodicity = "non-periodic"
-            geography = "us"
+            geography = "european"
             content_name = compile_content_name(content_type, ticker, year, quarter)
             file_type = 'pdf'
             file_name = file.name
@@ -51,6 +57,9 @@ def financial_data_view(request):
                 year = int(year)
             if quarter:
                 quarter = int(quarter)
+
+            if fiscal_date == "None":
+                fiscal_date = None
 
             event = construct_event(
                 equity_ticker=ticker,
