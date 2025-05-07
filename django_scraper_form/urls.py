@@ -17,9 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from main.views import financial_data_view
+from main.views import financial_data_view, content_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', financial_data_view, name='financial_data'),
+    path('content/', content_view, name='content'),
 ]

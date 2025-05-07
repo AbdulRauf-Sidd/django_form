@@ -1,0 +1,15 @@
+[
+    {
+        "equity_ticker": "QWERTY",
+        "geography": "EUROPEAN",
+        "content_name": "jbdskjfdskjfdshkfsdkf",
+        "file_type": "pdf",
+        "content_type": "company_conference_transcript",
+        "published_date": "2000-12-10",
+        "fiscal_date": "2000-12-10",
+        "fiscal_year": null,
+        "fiscal_quarter": null,
+        "r2_url": "https://pub-2c783279b61043e19fbdadd1bee5153a.r2.dev/QWERTY/2000-12-10/Resume.pdf/Resume.pdf",
+        "periodicity": "non-periodic"
+    }
+]
