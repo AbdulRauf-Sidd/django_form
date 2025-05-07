@@ -1,0 +1,28 @@
+[
+    {
+        "equity_ticker": "AAAA",
+        "geography": "US",
+        "content_name": "AAAA Q2 2022 Quarterly Report",
+        "file_type": "pdf",
+        "content_type": "quarterly_report",
+        "published_date": "2012-10-21",
+        "fiscal_date": "2000-12-12",
+        "fiscal_year": "2022",
+        "fiscal_quarter": "2",
+        "r2_url": "https://pub-2c783279b61043e19fbdadd1bee5153a.r2.dev/AAAA/2012-10-21/Project%20Proposal.pdf/Project%20Proposal.pdf",
+        "periodicity": "periodic"
+    },
+    {
+        "equity_ticker": "AAAA",
+        "geography": "US",
+        "content_name": "AAAA Q3 2022 Quarterly Report",
+        "file_type": "pdf",
+        "content_type": "quarterly_report",
+        "published_date": "2012-10-21",
+        "fiscal_date": "2000-12-12",
+        "fiscal_year": 2022,
+        "fiscal_quarter": 3,
+        "r2_url": "https://pub-2c783279b61043e19fbdadd1bee5153a.r2.dev/AAAA/2012-10-21/Grade%201%20%26%202%20Scratch%20Competiton.pdf/Grade%201%20%26%202%20Scratch%20Competiton.pdf",
+        "periodicity": "periodic"
+    }
+]

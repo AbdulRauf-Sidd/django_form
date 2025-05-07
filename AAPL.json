@@ -1,0 +1,15 @@
+[
+    {
+        "equity_ticker": "AAPL",
+        "geography": "US",
+        "content_name": "Quarterly Report",
+        "file_type": "pdf",
+        "content_type": "Earnings Report",
+        "published_date": "2025-05-07",
+        "fiscal_date": "2025-03-31",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "r2_url": "https://example.com/r2/AAPL_Q1_2025.pdf",
+        "periodicity": "Quarterly"
+    }
+]
