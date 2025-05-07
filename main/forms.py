@@ -49,6 +49,9 @@ class ContentForm(forms.Form):
     PDF_ERROR_MESSAGE = "Please upload a valid PDF file."
 
     CONTENT_TYPE_CHOICES = [
+        ('earnings_transcript', 'Earnings Call Transcript'),
+        ('earnings_presentation', 'Earnings Call Presentation'),
+        ('earnings_press_release', 'Earnings Call Press Release'),
         ('sellside_conference_presentation', 'Sellside Conference Presentation'),
         ('sellside_conference_transcript', 'Sellside Conference Transcript'),
         ('sellside_conference_other', 'Sellside Conference Other'),
